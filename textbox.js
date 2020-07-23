@@ -7,10 +7,9 @@ dialogue = [];
 dialogue.push(create_text("Bokke", "Have a great birthday SKL!|I hope you like my present, put a lot of work into this!"));
 dialogue.push(create_text("Hatty", "happy birthdayyyyyy : D"));
 dialogue.push(create_text("Cellist", "A very big happy birthday SKL! Thank you for always being so kind and understanding, hope your birthday is awesome!"));
+dialogue.push(create_text("", "Reserved for BananaSplitz"));
 let toc;
 let audio;
-
-//["Bokke", "Have a great birthday SKL!"], ["Hatty", "happy birthdayyyyyy : D"], ["", "So I tried to get some collaboration in here, but people prefered to make their own stuff instead."], ["", "TEST"]
 
 function create_text(name, text) {
   obj = {};
@@ -25,6 +24,7 @@ function starttb() {
   audio = new Audio('blip.wav')
   box = document.getElementById("textbox");
   shuffleArray(dialogue);
+  dialogue.push(create_text("", "If you want to congratulate SKL for their birthday using this page, just DM bokke1010, you can find me in the IF discord"));
   document.addEventListener('keypress', pressedZ);
 }
 
@@ -54,7 +54,8 @@ function pressedZ(key) {
           pindex++;
         }
       } else {
-        line = 0;
+        line = 0; // This is just to ensure the very first message gets shown too
+        // adding this logic to the end doesn't work due to timed events relying on this information
       }
       line = line % dialogue.length;
       clearTimeout(toc);
@@ -90,10 +91,8 @@ function addLetter() {
 }
 
 function reminder() {
-  if (line < dialogue.length - 1) {
-    let skiphint = document.getElementById("skiphint");
-    skiphint.style.visibility = "visible";
-  }
+  let skiphint = document.getElementById("skiphint");
+  skiphint.style.visibility = "visible";
 }
 
 function hidereminder() {

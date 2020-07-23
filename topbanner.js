@@ -3,12 +3,16 @@ let total = 0;
 let ctx;
 let canvas;
 let fireworks = [];
+var grd;
 
 function startfw() {
   canvas = document.getElementById("topbanner");
   ctx = canvas.getContext("2d");
   timer = 0;
   ctx.lineWidth = 3;
+  grd = ctx.createLinearGradient(0, canvas.height / 3, 0, canvas.height);
+  grd.addColorStop(0, "transparent");
+  grd.addColorStop(1, "#f17287ff");
   resize();
   animate();
   window.addEventListener("resize", resize);
@@ -72,6 +76,11 @@ function animate() {
       fws.splice(fi, 1);
     }
   });
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, canvas.height / 3, canvas.width, canvas.height);
+//canvas.height - 0.05 * canvas.height
   if (0.0002 * timer * canvas.width > total) {
     total += 1;
     let firework = {};
@@ -89,8 +98,11 @@ function animate() {
 }
 
 function resize (){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight * 0.2;
+  canvas.width = window.outerWidth;
+  canvas.height = window.outerHeight * 0.2;
   timer = 0;
   total = 0;
+  grd = ctx.createLinearGradient(0, canvas.height / 3, 0, canvas.height);
+  grd.addColorStop(0, "transparent");
+  grd.addColorStop(1, "#f17287ff");
 }
