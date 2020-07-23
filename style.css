@@ -1,0 +1,41 @@
+
+@font-face {
+  font-family: 'utfont';
+  src: url('../DTM-Mono.otf') format('truetype');
+
+  /* unicode-range: U+0030-0039, U+0041-005A, U+0061-007A;
+  font-weight: normal;
+  font-style: normal; */
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  font-family: utfont;
+  font-size: 32px;
+  text-align: center;
+}
+
+canvas {
+  width: 100%;
+  height: 20%;
+}
+
+img {
+  max-width: 20vw;
+  margin: 1em;
+}
+
+#textbox {
+  background-color: black;
+  text-align: left;
+  color: white;
+  padding: 1em;
+  border-width: 0.5em;
+  border-style: solid;
+  display: inline-block;
+}
