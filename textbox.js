@@ -20,7 +20,7 @@ function create_text(name, text) {
 }
 
 function starttb() {
-  audio = new Audio('blip.wav')
+  audio = new Audio('blip.wav');
   box = document.getElementById("textbox");
   shuffleArray(dialogue);
   dialogue.push(create_text("", "If you want to congratulate SKL for their birthday using this page, just DM bokke1010, you can find me in the IF discord"));
@@ -71,6 +71,7 @@ function pressedZ(key) {
 
 function addLetter() {
   let laudio = audio.cloneNode();
+  laudio.volume = 0.3;
   laudio.play();
 
   if (next) {
