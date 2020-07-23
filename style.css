@@ -27,7 +27,13 @@ canvas {
 
 img {
   max-width: 20vw;
-  margin: 1em;
+  margin: .6em;
+}
+
+#textcontainer {
+  width: 50vw;
+  display: inline-block;
+
 }
 
 #textbox {
@@ -37,7 +43,11 @@ img {
   padding: 1em;
   border-width: 0.5em;
   border-style: solid;
-  display: inline-block;
-  max-width: 50vw;
+  width: 50vw;
+  height: 20vh;
   word-wrap: break-word;
+}
+#skiphint {
+  visibility: hidden;
+  text-align: right;
 }

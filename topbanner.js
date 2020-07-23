@@ -39,19 +39,19 @@ function animate() {
     ctx.fillStyle = fw.color;
     fw.time++;
     if (fw.time < fw.lifetime - 100) {
-      ctx.lineWidth = 0.5;
+      fw.i = (fw.i + 1) % fw.trx.length;
+      fw.try[fw.i] = fw.try[mod(fw.i - 1, fw.trx.length)] - 0.02 * canvas.height;
+      fw.trx[fw.i] = fw.trx[mod(fw.i - 1, fw.trx.length)] + fw.xvel;
+      fw.xvel *= 1.05;
+
       ctx.beginPath();
       ctx.arc(fw.trx[fw.i], fw.try[fw.i], 2, 0, 2 * Math.PI);
-      // ctx.stroke();
       ctx.fill();
 
-      fw.i = (fw.i + 1) % fw.trx.length;
-      fw.try[fw.i] = fw.try[mod(fw.i - 1, fw.trx.length)] - 0.01 * canvas.height;
-      fw.trx[fw.i] = fw.trx[mod(fw.i - 1, fw.trx.length)] + fw.xvel;
-      fw.xvel *= 1.02;
+      ctx.lineWidth = 0.5;
       ctx.beginPath();
       ctx.moveTo(fw.trx[fw.i], fw.try[fw.i]);
-      for (var i = 0; i < Math.min(fw.trx.length - 1, fw.time); i++) {
+      for (var i = Math.min(fw.trx.length - 1, fw.time); i >= 0 ; i--) {
         index = (fw.i + i) % fw.trx.length;
         ctx.lineTo(fw.trx[index], fw.try[index]);
       }
@@ -77,12 +77,12 @@ function animate() {
     let firework = {};
     firework.trx = [Math.random() * canvas.width];
     firework.try = [canvas.height];
-    firework.trx.length = 15;
-    firework.try.length = 15;
+    firework.trx.length = 7;
+    firework.try.length = 7;
     firework.xvel = 0.5 * (Math.random() - 0.5);
     firework.i = 0;
     firework.time = 0;
-    firework.lifetime = 120 + 80 * Math.random();
+    firework.lifetime = 115 + 30 * Math.random();
     firework.color = getColor();
     fireworks.push(firework);
   }
@@ -91,4 +91,6 @@ function animate() {
 function resize (){
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight * 0.2;
+  timer = 0;
+  total = 0;
 }
