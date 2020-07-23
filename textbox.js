@@ -2,8 +2,8 @@ let box;
 let lindex = 0;
 let line = 0;
 let next = false;
-names = ["", "Hatty", "", "", ""]
-dialogue = ["Happy birthday SKL!", "happy birthdayyyyyy : D", "NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO", "4th?", "Just testing, this is the last sentence"];
+names = ["Bokke", "Hatty", "", "", ""]
+dialogue = ["Have a great birthday SKL!", "happy birthdayyyyyy : D", "TEST", "4th?", "Just testing, this is the last sentence"];
 
 function starttb() {
   box = document.getElementById("textbox");

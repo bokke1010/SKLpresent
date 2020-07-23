@@ -38,7 +38,7 @@ function animate() {
     ctx.strokeStyle = fw.color;
     ctx.fillStyle = fw.color;
     fw.time++;
-    if (fw.time < fw.lifetime - 100) {
+    if (fw.time < fw.lifetime - 80) {
       fw.i = (fw.i + 1) % fw.trx.length;
       fw.try[fw.i] = fw.try[mod(fw.i - 1, fw.trx.length)] - 0.02 * canvas.height;
       fw.trx[fw.i] = fw.trx[mod(fw.i - 1, fw.trx.length)] + fw.xvel;
@@ -82,7 +82,7 @@ function animate() {
     firework.xvel = 0.5 * (Math.random() - 0.5);
     firework.i = 0;
     firework.time = 0;
-    firework.lifetime = 115 + 30 * Math.random();
+    firework.lifetime = 95 + 30 * Math.random();
     firework.color = getColor();
     fireworks.push(firework);
   }
