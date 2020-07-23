@@ -3,7 +3,8 @@ let total = 0;
 let ctx;
 let canvas;
 let fireworks = [];
-var grd;
+let grd;
+let modifier = 0.0002;
 
 function startfw() {
   canvas = document.getElementById("topbanner");
@@ -16,6 +17,11 @@ function startfw() {
   resize();
   animate();
   window.addEventListener("resize", resize);
+}
+
+function turbo() {
+  modifier = 0.008;
+  total *= 40;
 }
 
 function mod(n, m) {
@@ -81,7 +87,7 @@ function animate() {
   ctx.fillStyle = grd;
   ctx.fillRect(0, canvas.height / 3, canvas.width, canvas.height);
 //canvas.height - 0.05 * canvas.height
-  if (0.0002 * timer * canvas.width > total) {
+  while (modifier * timer * canvas.width > total) {
     total += 1;
     let firework = {};
     firework.trx = [Math.random() * canvas.width];

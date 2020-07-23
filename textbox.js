@@ -16,7 +16,6 @@ function create_text(name, text) {
   obj.name = name;
   obj.text = text.split("|");
   obj.len = obj.text.length;
-  console.log(obj);
   return obj;
 }
 
