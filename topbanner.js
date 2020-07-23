@@ -4,7 +4,7 @@ let ctx;
 let canvas;
 let fireworks = [];
 
-window.onload = function() {
+function startfw() {
   canvas = document.getElementById("topbanner");
   ctx = canvas.getContext("2d");
   timer = 0;
