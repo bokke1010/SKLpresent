@@ -7,9 +7,17 @@ dialogue = ["Have a great birthday SKL!", "happy birthdayyyyyy : D", "TEST", "4t
 
 function starttb() {
   box = document.getElementById("textbox");
-  box.textContent = "* ";
+  startmessage();
   addLetter();
   document.addEventListener('keypress', pressedZ);
+}
+
+function startmessage() {
+  if(names[line] === ""){
+    box.textContent = "* ";
+  } else {
+    box.textContent = names[line] + ": ";
+  }
 }
 
 function pressedZ(key) {
@@ -18,11 +26,7 @@ function pressedZ(key) {
       if (++line < dialogue.length) {
         clearTimeout();
         hidereminder();
-        if(names[line] === ""){
-          box.textContent = "* ";
-        } else {
-          box.textContent = names[line] + ": ";
-        }
+        startmessage();
         lindex = 0;
         next = false;
         addLetter();
@@ -35,11 +39,8 @@ function pressedZ(key) {
 
 function addLetter() {
   if (next) {
-    if(names[line] === ""){
-      box.textContent = "* " + dialogue[line];
-    } else {
-      box.textContent = names[line] + ": " + dialogue[line];
-    }
+    startmessage();
+    box.textContent += dialogue[line];
     window.setTimeout(reminder, 1000);
   } else {
     box.textContent += dialogue[line][lindex];
