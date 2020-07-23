@@ -2,22 +2,29 @@ let box;
 let lindex = 0;
 let line = -1;
 let next = true;
-names = ["Bokke", "Hatty", "", "", ""]
-dialogue = ["Have a great birthday SKL!", "happy birthdayyyyyy : D", "TEST", "4th?", "Just testing, this is the last sentence"];
+dialogue = [["Bokke", "Have a great birthday SKL!"], ["Hatty", "happy birthdayyyyyy : D"], ["", "Sentences are in a random order now!"], ["", "TEST"]];
 // var audio;
 let audio;
 
 function starttb() {
   audio = new Audio('blip.wav')
   box = document.getElementById("textbox");
+  shuffleArray(dialogue);
   document.addEventListener('keypress', pressedZ);
 }
 
 function startmessage() {
-  if(names[line] === ""){
+  if(dialogue[line][0] === ""){
     box.textContent = "* ";
   } else {
-    box.textContent = names[line] + ": ";
+    box.textContent = dialogue[line][0] + ": ";
+  }
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
 
@@ -44,12 +51,12 @@ function addLetter() {
 
   if (next) {
     startmessage();
-    box.textContent += dialogue[line];
+    box.textContent += dialogue[line][1];
     window.setTimeout(reminder, 1000);
   } else {
-    box.textContent += dialogue[line][lindex];
+    box.textContent += dialogue[line][1][lindex];
     lindex++
-    if (lindex == dialogue[line].length) {
+    if (lindex == dialogue[line][1].length) {
       next = true;
       window.setTimeout(reminder, 1000);
     } else {
