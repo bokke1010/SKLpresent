@@ -4,11 +4,16 @@ let line = 0;
 let next = false;
 names = ["Bokke", "Hatty", "", "", ""]
 dialogue = ["Have a great birthday SKL!", "happy birthdayyyyyy : D", "TEST", "4th?", "Just testing, this is the last sentence"];
+// var audio;
+let audio;
 
 function starttb() {
+  audio = new Audio('blip.wav')
   box = document.getElementById("textbox");
-  startmessage();
-  addLetter();
+  window.setTimeout(function () {
+    startmessage();
+    addLetter();
+  }, 500);
   document.addEventListener('keypress', pressedZ);
 }
 
@@ -38,6 +43,9 @@ function pressedZ(key) {
 }
 
 function addLetter() {
+  let laudio = audio.cloneNode();
+  laudio.play();
+
   if (next) {
     startmessage();
     box.textContent += dialogue[line];
