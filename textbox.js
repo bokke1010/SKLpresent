@@ -1,7 +1,7 @@
 let box;
 let lindex = 0;
-let line = 0;
-let next = false;
+let line = -1;
+let next = true;
 names = ["Bokke", "Hatty", "", "", ""]
 dialogue = ["Have a great birthday SKL!", "happy birthdayyyyyy : D", "TEST", "4th?", "Just testing, this is the last sentence"];
 // var audio;
@@ -10,10 +10,6 @@ let audio;
 function starttb() {
   audio = new Audio('blip.wav')
   box = document.getElementById("textbox");
-  window.setTimeout(function () {
-    startmessage();
-    addLetter();
-  }, 500);
   document.addEventListener('keypress', pressedZ);
 }
 
