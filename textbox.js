@@ -4,7 +4,7 @@ let pindex = 0;
 let line = -1;
 let next = true;
 dialogue = [];
-dialogue.push(create_text("Bokke", "Have a great birthday SKL!|I hope you like my present, put a lot of work into this!"));
+dialogue.push(create_text("Bokke", "Have a great birthday SKL!|I hope you like my present, put a lot of work into this! Huge thanks to the others for their contributions too!"));
 dialogue.push(create_text("Hatty", "happy birthdayyyyyy : D"));
 dialogue.push(create_text("Cellist", "A very big happy birthday SKL! Thank you for always being so kind and understanding, hope your birthday is awesome!"));
 dialogue.push(create_text("BananaSplitz", "Happy Birthday SKL!!! Thamks for being so cool all the time, I hope this birthday is the best one yet! Prepare to be bombarded with gifts >:D"));
