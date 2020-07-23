@@ -11,28 +11,43 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: purple;
+  background-color: #f17287;
   margin: 0;
   padding: 0;
   border-width: 0;
   font-family: utfont;
   font-size: 32px;
   text-align: center;
+  z-index: 0;
 }
 
 canvas {
   width: 100%;
   height: 20%;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 img {
-  max-width: 20vw;
+  width: 40vmin;
   margin: .6em;
+  margin-left: -20vmin;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 6;
 }
 
 #textcontainer {
   width: 50vw;
   display: inline-block;
+  position: absolute;
+  top:60%;
+  left: 50%;
+  margin-left: -25vw;
+  z-index: 8;
 
 }
 
@@ -43,11 +58,24 @@ img {
   padding: 1em;
   border-width: 0.5em;
   border-style: solid;
-  width: 50vw;
+  /* width: 50vw; */
   height: 20vh;
   word-wrap: break-word;
 }
 #skiphint {
   visibility: hidden;
   text-align: right;
+}
+
+#star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  margin-left: -40vmin;
+  margin-top: -40vmin;
+  border-radius: 50%;
+  background-color: #fae646;
+  z-index: 1;
 }
