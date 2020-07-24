@@ -8,6 +8,8 @@ dialogue.push(create_text("Bokke", "Have a great birthday SKL!|I hope you like m
 dialogue.push(create_text("Hatty", "happy birthdayyyyyy : D"));
 dialogue.push(create_text("Cellist", "A very big happy birthday SKL! Thank you for always being so kind and understanding, hope your birthday is awesome!"));
 dialogue.push(create_text("BananaSplitz", "Happy Birthday SKL!!! Thamks for being so cool all the time, I hope this birthday is the best one yet! Prepare to be bombarded with gifts >:D"));
+dialogue.push(create_text("beril", "Enjoy the celebration of the number of times the world has revolved with you on it. It is said that love makes the world go round, therefore today is a day about love.  May you be cherished evermore and may the happy memories you make today cheer you up when you feel bonetrousled.|Today is highly likely to have an Unexpected Party: a merry event with good food and cool friends to hang out with. In conclusion: happy birthday, super kirbylover! May you have a joyous adjustment to adulthood!"));
+
 let toc;
 let audio;
 
