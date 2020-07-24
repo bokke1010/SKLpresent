@@ -41,12 +41,12 @@ img {
 }
 
 #textcontainer {
-  width: 50vw;
+  width: 60vw;
   display: inline-block;
   position: absolute;
   top:60%;
   left: 50%;
-  margin-left: -25vw;
+  margin-left: -30vw;
   z-index: 8;
 
 }
@@ -58,7 +58,7 @@ img {
   padding: 0.5em 1em 0.5em 1em;
   border-width: 0.5em;
   border-style: solid;
-  height: 20vh;
+  height: 25vh;
   word-wrap: break-word;
 }
 #skiphint {
